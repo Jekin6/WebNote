@@ -1,0 +1,21 @@
+.list-item-title
+{
+	color:#6666ff;
+	font-weight:large;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.list-item-narrative
+{
+	color: #666666;
+	font-weight: normal;
+	text-overflow:hidden;
+}
+
+.li-disable-header
+{
+	background-color: #0000ff;
+	text-align: center;	
+}
+

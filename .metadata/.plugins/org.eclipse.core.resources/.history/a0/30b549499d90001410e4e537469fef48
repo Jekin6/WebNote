@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="css/themes/jekin_cust/jekin-custom-theme.css" rel="stylesheet" type="text/css" />
+    <link href="css/themes/jekin_cust/jquery.mobile.icons.min.css" rel="stylesheet" type="text/css" />
+   
+
+    <link href="css/themes/default/jquery.mobile-1.4.0.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/app.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Libraries -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script>
+    <script type="text/javascript" src="../lib/jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="jquery-1.8.2.js"></script>
+    <script type="text/javascript" src="../lib/jstorage/jstorage.js"></script>
+
+   <!-- include source files here... -->
+  <script type="text/javascript" src="app/DataContext.js"></script>
+  <script type="text/javascript" src="app/Controller.js"></script>
+  <script type="text/javascript" src="app/NoteModel.js"></script>
+ 
+  <!-- Test helper -->
+  <script type="text/javascript" src="spec/TestHelper.js"></script>
+
+ <!--  
+<script type="text/javascript">
+   $(document).bind("mobileinit", function () {
+
+    //Notes.testHelper.createDummyNotes();
+    Notes.controller.init();
+    });
+</script>-->
+
+    <script  type="text/javascript" src="../lib/jqm/jquery.mobile-1.4.0.min.js"></script>
+</head>
+<body>
+  <!--Note list page-->
+    <div data-role="page" id="notes-list-page" data-title="My Notes" data-theme="d" >
+        <div data-role="header" data-position="fixed">
+            <h1>My Notes</h1>
+            <a href="#note-editor-page" class="ui-btn-right" data-icon="plus">New</a>
+        </div>
+        <div data-role="content" id="notes-list-content" data-theme="c">
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <h2>jQuery Mobile demo</h2>
+        </div>
+    </div>
+
+<!--Edit note page-->
+    <div data-role="page" id="note-editor-page" data-title="Edit Note" data-theme="d">
+    <div data-role="header" data-position="fixed">
+        <a href="#notes-list-page" data-icon="back" data-rel="back">Cancel</a>
+        <h1>
+            Edit Note</h1>
+        <a id="save-note-button" href="" data-theme="d" data-icon="check">Save</a>
+    </div>
+    <div data-role="content">
+        <form action="" method="post" id="note-editor-form">
+        <label for="note-title-editor">
+            Title:</label>
+        <input type="text" name="note-title-editor" id="note-title-editor" value="" />
+        <label for="note-narrative-editor">
+            Narrative:</label>
+        <textarea name="note-narrative-editor" id="note-narrative-editor"></textarea>
+        </form>
+    </div>
+
+    <div data-role="footer" data-position="fixed" class="ui-bar">
+        <a id="delete-note-button" data-icon="delete" data-transition="slideup" data-rel="dialog">Delete</a>
+    </div>
+</div>
+
+<!--Invalid Note dialog-->
+<div id="invalid-note-dialog" data-role="dialog" data-title="Invalid Note" data-theme="d">
+    <div data-role="header" data-theme="d">
+    <h1>Wait!</h1>
+    </div>
+    <div data-role="content">Enter a title for this note.</div>
+</div>
+
+<!-- Confirm Delete Note dialog-->
+<div id="confirm-delete-note-dialog" data-role="dialog" data-title="Delete Note" data-theme="d">
+<div data-role="header">
+<h1>Delete Note?</h1>
+</div>
+<div data-role="content">
+<div id="delete-note-content-placeholder"></div>
+ <a id="cancel-delete-note-button" data-role="button" data-theme="d" data-rel="back">No</a>
+ <a id="ok-to-delete-note-button" data-role="button" data-theme="d">Yes</a></div>
+</div>
+
+
+</body>
+</html>
